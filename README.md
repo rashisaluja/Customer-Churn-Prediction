@@ -18,4 +18,4 @@ columns, including the target variable i.e. 'Churn'.
 6. HTML and CSS
 
 ## Demo:
-
+![link](https://github.com/rashisaluja/Customer-Churn-Prediction/blob/main/Customer%20Churn%20Prediction/Images/Customer%20Churn%20Prediction%20-%20Google%20Chrome%202021-05-30%2018-10-15.gif)
