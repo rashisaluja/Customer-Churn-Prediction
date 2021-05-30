@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <title>Customer Churn Prediction</title>
+	<style>
+		body {
+    		background-color: #0B0C10;
+		}
+		h1 {
+    		color: #66FCF1;
+    		text-align: center;
+    		font-family: Georgia, serif;
+		}
+		.ml-container {
+			text-align: center;
+			font-family: Georgia, serif;
+		}
+		.table1{
+			margin-left: auto;
+			margin-right: auto;
+			background-color: #1F2833;
+			border-radius: 25px;
+			color: #C5C6C7;
+		}
+		.btn-info {
+			background-color: #0B0C10;
+			border-radius: 12px;
+			color: white;
+			font-size: 18px;
+			width: 110px;
+			height: 40px;
+			font-family: Georgia, serif;
+			border-color: #66FCF1;
+		}
+		.btn-info:hover {
+			background-color: white;
+			color: #0B0C10;
+		}
+		.first{
+			text-align: right;
+			padding: 10px;
+		}
+		.sec{
+			text-align: left;
+			padding: 10px;
+		}
+		.out{
+			color: #66FCF1;
+    		text-align: center;
+    		font-family: Georgia, serif;
+    		font-size: 150%;
+		}
+
+
+	</style>
+</head>
+<body>
+    <header>
+		<div class="container">
+			<h1>CUSTOMER CHURN PREDICTION</h1>
+		</div>
+	</header>
+
+	<div class="ml-container">
+		<form action="{{ url_for('predict')}}" method="POST">
+
+			<table class="table1">
+				<tr>
+					<td class="first">Senior Citizen:</td>
+					<td class="sec"><input type="text" name="SeniorCitizen" required></td>
+					<td class="first">Monthly Charges:</td>
+					<td class="sec"><input type="text" name="MonthlyCharges" required></td>
+				</tr>
+				<tr>
+					<td class="first">Total Charges:</td>
+					<td class="sec"><input type="text" name="TotalCharges" required></td>
+					<td class="first">Gender:</td>
+					<td class="sec"><input type="text" name="Gender" required></td>
+				</tr>
+				<tr>
+					<td class="first">Partner:</td>
+					<td class="sec"><input type="text" name="Partner" required></td>
+					<td class="first">Dependents:</td>
+					<td class="sec"><input type="text" name="Dependents" required></td>
+				</tr>
+				<tr>
+					<td class="first">Phone Service:</td>
+					<td class="sec"><input type="text" name="PhoneService" required></td>
+					<td class="first">Multiple Lines:</td>
+					<td class="sec"><input type="text" name="MultipleLines" required></td>
+				</tr>
+				<tr>
+					<td class="first">Internet Service:</td>
+					<td class="sec"><input type="text" name="InternetService" required></td>
+					<td class="first">Online Security:</td>
+					<td class="sec"><input type="text" name="OnlineSecurity" required></td>
+				</tr>
+				<tr>
+					<td class="first">Online Backup:</td>
+					<td class="sec"><input type="text" name="OnlineBackup" required></td>
+					<td class="first">Device Protection:</td>
+					<td class="sec"><input type="text" name="DeviceProtection" required></td>
+				</tr>
+				<tr>
+					<td class="first">Tech Support:</td>
+					<td class="sec"><input type="text" name="TechSupport" required></td>
+					<td class="first">Streaming TV:</td>
+					<td class="sec"><input type="text" name="StreamingTV" required></td>
+				</tr>
+				<tr>
+					<td class="first">Streaming Movies:</td>
+					<td class="sec"><input type="text" name="StreamingMovies" required></td>
+					<td class="first">Contract:</td>
+					<td class="sec"><input type="text" name="Contract" required></td>
+				</tr>
+				<tr>
+					<td class="first">Paperless Billing:</td>
+					<td class="sec"><input type="text" name="PaperlessBilling" required></td>
+					<td class="first">Payment Method:</td>
+					<td class="sec"><input type="text" name="PaymentMethod" required></td>
+				</tr>
+				<tr>
+					<td class="first">Tenure:</td>
+					<td class="sec"><input type="text" name="Tenure" required></td>
+				</tr>
+			</table>
+			<br><br>
+			<button type="submit" class="btn-info" value="Predict">Predict</button>
+			<br><br>
+			<div class="out">{{prediction_text}}</div>
+			<div class="out">{{predicted_confidence}}</div>
+		</form>
+
+	</div>
+
+</body>
+</html>
